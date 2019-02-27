@@ -1,0 +1,15 @@
+<div class="row">
+    <div class="col-md-6 text-center">
+        <img src="https://image.tmdb.org/t/p/w300/{{dataPeli.poster_path}}" alt="">
+    </div>
+    <div class="col-md-6">
+        <h1>{{dataPeli.title}}</h1>
+        <p>{{dataPeli.overview}}</p>
+        <p><span class="text-info">calificación {{dataPeli.vote_average}}/10 <span class="text-success">de {{dataPeli.vote_count}} usuarios</span></span>
+        </p>
+        <p>
+            <span class="text-info bg-dark rounded p-1 px-2 mr-2" *ngFor="let item of dataPeli.genres">{{item.name}}</span>
+        </p>
+        <button class="btn btn-outline-warning" onclick="javascript:window.history.back();">Regresar</button>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="card-columns">
+    <div class="card" *ngFor="let movie of arraySearch">
+        <img src="https://image.tmdb.org/t/p/w300/{{movie.backdrop_path}}" class="card-img-top">
+        <div class="card-body">
+            <h5 class="card-title">{{movie.title}}</h5>
+            <p class="card-text">{{movie.overview}}</p>
+            <p><span class="text-info">calificación {{movie.vote_average}}/10 <span class="text-success">de {{movie.vote_count}} usuarios</span></span>
+                <button [routerLink]="['/detalle',movie.id]" class="btn btn-block btn-outline-info mt-3">Detalle</button>
+        </div>
+    </div>
+</div>
+
+<div class="alert alert-warning" role="alert" *ngIf="arraySearch.length == 0">
+    Lo sentimos No se encontraron resultados para <b> {{textSearch}}</b>
+</div>
